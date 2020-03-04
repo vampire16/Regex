@@ -47,7 +47,19 @@ function mobile(){
 	fi
 }
 
+function password(){
+	pattern="^[a-zA-Z]{8,}$"
+	read -p "Enter password : " password
+	if [[ $password =~ $pattern ]]
+	then
+		echo "Password entered successfully"
+	else
+		echo "Password entered is invalid"
+	fi
+}
+
 #firstName
 #lastName
 #eMail
-mobile
+#mobile
+password
