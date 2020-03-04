@@ -36,6 +36,18 @@ function eMail(){
 	fi
 }
 
+function mobile(){
+	pattern="^[0-9]{2}\s[0-9]{10}$"
+	read -p "Enter Mobile number : " num
+	if [[ $num =~ $pattern ]]
+	then
+		echo "Valid"
+	else
+		echo "Invalid"
+	fi
+}
+
 #firstName
 #lastName
-eMail
+#eMail
+mobile
