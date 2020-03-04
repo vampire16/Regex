@@ -25,5 +25,17 @@ function lastName(){
 	fi
 }
 
-firstName
-lastName
+function eMail(){
+	pattern="^[a-z]{1,}([.]?[-]?[+]?[a-z0-9]{1,})?[@]{1}[a-z0-9]{1,}[.]{1}[a-z]{1,}([.]?[a-z]{2,})?$"
+	read -p "Enter email : " eMail
+	if [[ $eMail =~ $pattern ]]
+	then
+		echo "Valid"
+	else
+		echo "Invalid"
+	fi
+}
+
+#firstName
+#lastName
+eMail
