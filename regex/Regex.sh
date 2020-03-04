@@ -48,9 +48,9 @@ function mobile(){
 }
 
 function password(){
-	pattern="^[a-zA-Z]{8,}$"
+	pattern="[a-zA-Z]{8,}$"
 	read -p "Enter password : " password
-	if [[ $password =~ $pattern ]]
+	if [[ $password =~ $pattern && $password == *[[:upper:]]* ]]
 	then
 		echo "Password entered successfully"
 	else
