@@ -26,7 +26,7 @@ function lastName(){
 }
 
 function eMail(){
-	pattern="^[a-z]{1,}([.]?[-]?[+]?[a-z0-9]{1,})?[@]{1}[a-z0-9]{1,}[.]{1}[a-z]{1,}([.]?[a-z]{2,})?$"
+	pattern="^[a-z]{1,}([.]?[-]?[+]?[a-z0-9]{1,})?[@]{1}[a-z0-9]{1,}[.]{1}[a-z]{2,}([.]?[a-z]{2,})?$"
 	read -p "Enter email : " eMail
 	if [[ $eMail =~ $pattern ]]
 	then
@@ -48,9 +48,12 @@ function mobile(){
 }
 
 function password(){
-	pattern="[a-zA-Z0-9]{8,}$"
+	pattern="[a-zA-Z0-9]{8,}"
+	pattern1="[a-zA-Z0-9]*[A-Z][a-zA-Z0-9]*"
+	pattern2="[a-zA-Z0-9]*[0-9][a-zA-Z0-9]*"
+	pattern3="^[a-zA-Z0-9]*[@#$%&]{1}[a-zA-Z0-9]*$"
 	read -p "Enter password : " password
-	if [[ $password =~ $pattern && $password == *[[:upper:]]* && $password == *[[:digit:]]* ]]
+	if [[ $password =~ $pattern && $password =~ $pattern1 && $password =~ $pattern2 && $password =~ $pattern3 ]]
 	then
 		echo "Password entered successfully"
 	else
@@ -58,8 +61,8 @@ function password(){
 	fi
 }
 
-#firstName
-#lastName
-#eMail
-#mobile
+firstName
+lastName
+eMail
+mobile
 password
